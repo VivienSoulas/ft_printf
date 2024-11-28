@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:53:33 by vsoulas           #+#    #+#             */
-/*   Updated: 2024/11/28 12:59:28 by vsoulas          ###   ########.fr       */
+/*   Updated: 2024/11/28 17:15:58 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 // int	main(void)
 // {
 // 	char			c;
-// 	// char			*s;
+// 	char			*s;
+//	char			*s1;
 // 	void			*p;
+//	void			*p1;
 // 	int				d;
 // 	int				i;
 // 	unsigned int	u;
@@ -24,10 +26,18 @@
 // 	int				X;
 // 	int				result;
 // 	int				results;
+//	int				results1;
+//	int				results2;
+//	int				results3;
+//	int				results4;
+//	int				results5;
+//	int				results6;
 
 // 	c = 'a';
-// 	// s = NULL;
+// 	s = NULL;
+//	s1 = "This is working ?";
 // 	p = NULL;
+//	p1 = &i;
 // 	d = 666;
 // 	i = INT_MIN;
 // 	u = -1;
@@ -35,33 +45,55 @@
 // 	X = 568913;
 // 	result = 0;
 // 	results = 0;
+//	results1 = 0;
+//	results2 = 0;
+//	results3 = 0;
+//	results4 = 0;
+//	results5 = 0;
+//	results6 = 0;
 
 // 	printf("\n");
 // 	printf("original printf:\n");
 // 	printf("char c = %c\n", c);
-// 	// result = printf(" NULL %s NULL \n", NULL);
-// 	// printf("%i\n", result);
-// 	result = printf("pointer p = %p\n", p);
-// printf("%i\n", result);
+//results1 = printf("string s = %s\n", s);
+//printf("%i\n", results1);
+//result = printf("string1 s = %s\n", s1);
+//printf("%i\n", result);
+//	printf("pointer p = %p\n", p);
+//	printf("pointer p1 = %p\n", p1);
 // 	printf("int d = %d\n", d);
 // 	printf("int i = %i\n", i);
 // 	printf("unsigned decimal u = %u\n", u);
 // 	printf("hex lower x = %x\n", x);
 // 	printf("hexa upper X = %X\n", X);
+//results3 = printf("this is a trial %");
+//printf("\n");
+//printf("%i\n", results3);
+//results5 = printf("this is %, a trial");
+//printf("\n");
+//printf("%i\n", results5);
 // 	printf("%%\n");
 // 	printf("\n\n");
 
 // 	ft_printf("my ft_printf:\n");
 // 	ft_printf("char c = %c\n", c);
-// 	// results = printf(" NULL %s NULL \n", NULL);
-// 	// printf("%i\n", results);
-// 	results = ft_printf("pointer p = %p\n", 0);
+//results2 = printf("string s = %s\n", s);
+//printf("%i\n", results2);
+//results = ft_printf("string1 s = %s\n", s1);
 //printf("%i\n", results);
+//	ft_printf("pointer p = %p\n", p);
+//	ft_printf("pointer p1 = %p\n", p1);
 // 	ft_printf("int d = %d\n", d);
 // 	ft_printf("int i = %i\n", i);
 // 	ft_printf("unsigned decimal u = %u\n", u);
 // 	ft_printf("hex lower x = %x\n", x);
 // 	ft_printf("hexa upper X = %X\n", X);
+//results4 = printf("this is a trial %");
+//printf("\n");
+//printf("%i\n", results4);
+//results6 = printf("this is %, a trial");
+//printf("\n");
+//printf("%i\n", results6);
 // 	ft_printf("%%\n");
 // 	printf("\n");
 // 	return (0);
@@ -74,7 +106,7 @@ int	ft_printf(const char *format, ...)
 	int		count;
 
 	if (format == NULL)
-		return (0);
+		return (-1);
 	i = 0;
 	count = 0;
 	va_start(ptr, format);
@@ -85,6 +117,8 @@ int	ft_printf(const char *format, ...)
 			count += ft_check_format(format, i + 1, ptr);
 			i++;
 		}
+		else if (format[i] == '%' && format[i + 1] == '\0')
+			return (-1);
 		else
 			count += ft_putchar(format[i]);
 		i++;
@@ -98,15 +132,15 @@ int	ft_check_format(const char *format, int i, va_list ptr)
 	int	count;
 
 	count = 0;
+	if (format[i] == '\0')
+		return (-1);
 	if (format[i] == 'c')
 		return (ft_putchar(va_arg(ptr, int)));
 	if (format[i] == 's')
 		return (ft_putstr(va_arg(ptr, char *)));
 	if (format[i] == 'p')
 		return (ft_printptr(va_arg(ptr, void *), &count));
-	if (format[i] == 'd')
-		return (ft_putnbr(va_arg(ptr, int), &count));
-	if (format[i] == 'i')
+	if (format[i] == 'd' || format[i] == 'i')
 		return (ft_putnbr(va_arg(ptr, int), &count));
 	if (format[i] == 'u')
 		return (ft_putunsignednbr(va_arg(ptr, unsigned int), &count));
