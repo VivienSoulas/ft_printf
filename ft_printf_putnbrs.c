@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:42:28 by vsoulas           #+#    #+#             */
-/*   Updated: 2024/11/28 12:46:24 by vsoulas          ###   ########.fr       */
+/*   Updated: 2024/11/28 13:00:29 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_putnbr(int i, int *count)
 	return (*count);
 }
 
-int	ft_putunsignednbr(unsigned int i, int *count)
+int	ft_putunsignednbr(unsigned long i, int *count)
 {
 	int				result;
 
@@ -49,7 +49,7 @@ int	ft_putunsignednbr(unsigned int i, int *count)
 	return (result + 1);
 }
 
-int	ft_printhexa(unsigned int x, char a, int *count)
+int	ft_printhexa(unsigned long x, char a, int *count)
 {
 	char	c;
 	char	base_up_hexa [17];
