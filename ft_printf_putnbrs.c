@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:42:28 by vsoulas           #+#    #+#             */
-/*   Updated: 2024/11/28 12:03:39 by vsoulas          ###   ########.fr       */
+/*   Updated: 2024/11/28 12:46:24 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	ft_putnbr(int i, int *count)
 	(*count)++;
 	if (i == INT_MIN)
 	{
-		write(1, "-2147483648", 12);
-		*count += 10;
+		write(1, "-2147483648", 11);
+		(*count) += 10;
+		return (*count);
 	}
 	else
 	{
