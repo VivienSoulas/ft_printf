@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:53:33 by vsoulas           #+#    #+#             */
-/*   Updated: 2024/11/28 11:45:15 by vsoulas          ###   ########.fr       */
+/*   Updated: 2024/11/28 12:42:37 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,8 @@ int	ft_putstr(const char *s)
 	i = 0;
 	if (s == NULL)
 	{
-		write(1, "(null)", 5);
-		return (5);
+		write(1, "(null)", 6);
+		return (6);
 	}
 	while (s[i])
 	{
