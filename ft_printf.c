@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:53:33 by vsoulas           #+#    #+#             */
-/*   Updated: 2024/11/28 12:42:37 by vsoulas          ###   ########.fr       */
+/*   Updated: 2024/11/28 12:56:14 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 // 	c = 'a';
 // 	// s = NULL;
-// 	p = &c;
+// 	p = NULL;
 // 	d = 666;
 // 	i = INT_MIN;
 // 	u = -1;
@@ -55,7 +55,7 @@
 // 	ft_printf("char c = %c\n", c);
 // 	// results = printf(" NULL %s NULL \n", NULL);
 // 	// printf("%i\n", results);
-// 	results = ft_printf("pointer p = %p\n", p);
+// 	results = ft_printf("pointer p = %p\n", 0);
 //printf("%i\n", results);
 // 	ft_printf("int d = %d\n", d);
 // 	ft_printf("int i = %i\n", i);
@@ -151,7 +151,12 @@ int	ft_printptr(void *ptr, int *count)
 	int	result;
 
 	result = 0;
-	write(1, "0x", 3);
+	if (ptr == NULL)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	write(1, "0x", 2);
 	result = ft_printhexa((uintptr_t)ptr, 'x', count);
 	return (result + 2);
 }
