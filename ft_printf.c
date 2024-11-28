@@ -6,7 +6,7 @@
 /*   By: vsoulas <vsoulas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:53:33 by vsoulas           #+#    #+#             */
-/*   Updated: 2024/11/22 13:53:02 by vsoulas          ###   ########.fr       */
+/*   Updated: 2024/11/28 11:45:15 by vsoulas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@
 // 	printf("char c = %c\n", c);
 // 	// result = printf(" NULL %s NULL \n", NULL);
 // 	// printf("%i\n", result);
-// 	printf("pointer p = %p\n", p);
+// 	result = printf("pointer p = %p\n", p);
+// printf("%i\n", result);
 // 	printf("int d = %d\n", d);
 // 	printf("int i = %i\n", i);
 // 	printf("unsigned decimal u = %u\n", u);
-// 	result = printf("hex lower x = %x\n", x);
-// printf("%i\n", result);
+// 	printf("hex lower x = %x\n", x);
 // 	printf("hexa upper X = %X\n", X);
 // 	printf("%%\n");
 // 	printf("\n\n");
@@ -55,12 +55,12 @@
 // 	ft_printf("char c = %c\n", c);
 // 	// results = printf(" NULL %s NULL \n", NULL);
 // 	// printf("%i\n", results);
-// 	ft_printf("pointer p = %p\n", p);
+// 	results = ft_printf("pointer p = %p\n", p);
+//printf("%i\n", results);
 // 	ft_printf("int d = %d\n", d);
 // 	ft_printf("int i = %i\n", i);
 // 	ft_printf("unsigned decimal u = %u\n", u);
-// 	results = ft_printf("hex lower x = %x\n", x);
-// printf("%i\n", results);
+// 	ft_printf("hex lower x = %x\n", x);
 // 	ft_printf("hexa upper X = %X\n", X);
 // 	ft_printf("%%\n");
 // 	printf("\n");
@@ -153,5 +153,5 @@ int	ft_printptr(void *ptr, int *count)
 	result = 0;
 	write(1, "0x", 3);
 	result = ft_printhexa((uintptr_t)ptr, 'x', count);
-	return (result);
+	return (result + 2);
 }
