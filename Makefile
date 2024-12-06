@@ -1,9 +1,7 @@
+NAME = libftprintf.a
 SRC = ft_printf.c \
 	ft_printf_putnbrs.c
 OBJ = $(SRC:.c=.o)
-
-NAME = libftprintf.a
-
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
@@ -20,7 +18,7 @@ $(NAME): $(OBJ)
 clean:
 	@rm -f $(OBJ)
 
-fclean:
+fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
