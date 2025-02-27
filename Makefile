@@ -1,4 +1,4 @@
-NAME = libftprintf.a
+NAME = ft_printf.a
 SRC = ft_printf.c \
 	ft_printf_putnbrs.c
 OBJ = $(SRC:.c=.o)
@@ -9,9 +9,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
+	@echo "ft_printf compiled"
 
-[%.o: %.c]
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
 
